@@ -40,6 +40,8 @@ exec /usr/bin/env bash --rcfile "$0" "$@"
 	popd > /dev/null
 }
 
+# if the user has set a custom PROMPT_COMMAND, unset it now
+[[ -n "${PROMPT_COMMAND:-}" ]] && unset PROMPT_COMMAND
 
 # ALIASES + COMPLETION =========================================================
 
